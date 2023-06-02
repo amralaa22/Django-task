@@ -1,0 +1,23 @@
+{%extends 'parent.html'%}
+{%block tit%}
+Trainee _ Add
+{%endblock%}
+{%block header%}
+Trainee _ header
+{%endblock%}
+{%block content%}
+<form method="post">
+    {%csrf_token%}
+    <input type="text" name="coursename">
+    <br>
+    <select name="course">
+        {%for course in courses%}
+        <option value="{{course.id}}">{{course.name}}</option>
+        {%endfor%}
+    </select>
+    <br>
+    <input type="submit" value="add">
+
+
+</form>
+{%endblock%}

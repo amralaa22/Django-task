@@ -1,0 +1,25 @@
+{%extends 'parent.html'%}
+{%block tit%}
+Trainee _ Update
+{%endblock%}
+{%block header%}
+Trainee _ header
+{%endblock%}
+{%block content%}
+<form method="post">
+    {%csrf_token%}
+    <input type="text" name="traineename" value="{{trainee.name}}">
+    <br>
+    <select name="coursename">
+        {%for course in courses%}
+        <option value="{{ course.id }}" {% if course.id == trainee.courseid.id %} selected {% endif %}>
+            {{course.name}}
+        </option>
+        {%endfor%}
+    </select>
+    <br>
+    <input type="submit" value="Update">
+
+
+</form>
+{%endblock%}
