@@ -1,0 +1,15 @@
+{%extends 'parent.html'%}
+{%block tit%}
+Course _ Add
+{%endblock%}
+{%block header%}
+Course _ content
+{%endblock%}
+{%block content%}
+Course _ header
+<form method="post">
+    {%csrf_token%}
+    {{form.as_p}}
+    <input type="submit" value="add">
+</form>
+{%endblock%}
